@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let interval: number | null = null;
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
+
+
+
 export class BoardComponent implements OnInit {
   squares: string[];
   xIsNext: boolean;
@@ -57,5 +64,31 @@ export class BoardComponent implements OnInit {
       }
     }
     return null;
+  }
+
+  shuffleLetters(event: MouseEvent) {
+    let iteration = 0;
+  
+    clearInterval(interval);
+  
+    interval = window.setInterval(() => {
+      const heading = event.target as HTMLHeadingElement;
+      heading.innerText = heading.innerText
+        .split("")
+        .map((letter, index) => {
+          if(index < iteration) {
+            return heading.dataset.value![index];
+          }
+        
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+      
+      if(iteration >= heading.dataset.value!.length) { 
+        clearInterval(interval);
+      }
+      
+      iteration += 1 / 3;
+    }, 30);
   }
 }

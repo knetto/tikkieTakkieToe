@@ -1,4 +1,7 @@
-<h1>Current Player: {{ player }} </h1>
+<h1 (mouseover)="shuffleLetters($event)" data-value="TIC TAC TOE">TIC TAC TOE</h1>
+
+
+<h2>Current Player: {{ player }} </h2>
 
 <button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
 
