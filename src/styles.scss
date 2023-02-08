@@ -3,26 +3,50 @@ body {
     place-items: center;
     height: 100vh;
     background-color: black;
-    margin: 0rem;
-    overflow: hidden;
+
   }
   
   h1 {
+    margin-left:80px;
+    margin-right:80px;
+    text-align: center;
     font-family: 'Space Mono', monospace;
     font-size: clamp(3rem, 10vw, 10rem);
     color: white;
     padding: 0rem clamp(1rem, 2vw, 3rem);
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
   }
+  
   h2 {
+    text-align: center;
     font-family: 'Space Mono', monospace;
-    font-size: clamp(3rem, 10vw, 10rem);
+    font-size: clamp(3rem, 2vw, 10rem);
     color: white;
-    padding: 0rem clamp(1rem, 2vw, 3rem);
-    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  }
+  h3 {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 1vw, 10rem);
+    color: white;
   }
   
   h1:hover {
     background-color: white;
     color: black;
+  }
+
+  button {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(3rem, 0.5vw, 10rem);
+    color: rgb(0, 0, 0);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    
+  } 
+  button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
   }

@@ -3,8 +3,16 @@ main {
     grid-template-columns: 200px 200px 200px;
     grid-gap: 0px;
 }
+
   
 app-square {
-    border: 1px gray solid;
+    border: 1px solid rgb(255, 255, 255);
     height: 200px;
 }
+
+.main-container {
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+
+  }

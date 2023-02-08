@@ -3,19 +3,20 @@
 
 <h2>Current Player: {{ player }} </h2>
 
-<button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
 
 
-<h2 *ngIf="winner">
+<h3 *ngIf="winner">
     Player {{ winner }} won the game!
-</h2>
+</h3>
 
 
-<main>
+
+<button class="btn" nbButton outline status="danger" (click)="newGame()" (mouseover)="shuffleLetters($event)" data-value="START NEW GAME!">START NEW GAME!</button>
+
+<main class="main-container">
     <app-square 
         *ngFor="let val of squares; let i = index" 
         [value]="val"
         (click)="makeMove(i)"> 
-
     </app-square>
 </main>
